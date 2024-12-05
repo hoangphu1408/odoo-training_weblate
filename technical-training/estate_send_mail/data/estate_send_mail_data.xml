@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record id="email_template_property_sold" model="mail.template">
+            <field name="name">Property Sold Notification</field>
+            <field name="model_id" ref="model_estate_property" />
+            <field name="subject">Property ${object.name} Sold!</field>
+            <field name="email_to">${object.buyer_email}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
+                        <h2 style="color: #4CAF50;">Property Sold Notification</h2>
+                        <p>Dear <strong>${object.buyer_id.name}</strong>,</p>
+                        
+                        <p>We are pleased to inform you that the property <strong>${object.name}</strong> you purchased has been sold successfully by <strong>${object.user_sold.name}</strong>.</p>
+                        
+                        <p>Thank you for your trust in our services. We look forward to assisting you again in the future.</p>
+                        
+                        <p style="margin-top: 20px;">Best regards,</p>
+                        <p><em>Your Real Estate Team</em></p>
+                    </div>
+                ]]>
+            </field>
+        </record>
+
+
+        <record id="email_template_offer_accepted" model="mail.template">
+            <field name="name">Offer Accepted Notification</field>
+            <field name="model_id" ref="model_estate_property_offer" />
+            <field name="subject">Property Offer for ${object.property_id.name} Accepted!</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="body_html">
+               <![CDATA[
+            <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
+                <h2 style="color: #4CAF50;">Offer Accepted Notification</h2>
+                
+                <p>Dear <strong>${object.partner_id.name}</strong>,</p>
+                
+                <p>We are excited to inform you that your offer for the property <strong>${object.property_id.name}</strong> has been accepted by <strong>${object.user_accept.name}</strong>.</p>
+                
+                <p>Thank you for your interest and trust in our services. We are here to assist you further with any remaining steps in the process.</p>
+                
+                <p style="margin-top: 20px;">Warm regards,</p>
+                <p><em>Your Real Estate Team</em></p>
+            </div>
+        ]]>
+            </field>
+        </record>
+    </data>
+</odoo>
