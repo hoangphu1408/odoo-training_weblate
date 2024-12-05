@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_estate_property_type_tree" model="ir.ui.view">
+        <field name="name">estate.property.type.tree</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <tree string="Estate Property Type List">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_estate_property_type_form" model="ir.ui.view">
+        <field name="name">estate.property.type.form</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+
+
+            <form string="Estate Property Type">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(estate.action_estate_property_offer)d" type="action"
+                            class="oe_stat_button" icon="fa-list">
+                            <field name="offer_count" string="Offer Count"
+                                widget="statinfo" />
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name" />
+
+                    </group>
+                    <notebook>
+                        <page name="Properties">
+                            <field name="property_ids" mode="tree">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="expected_price" />
+                                    <field name="state" />
+
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <record id="action_estate_property_type" model="ir.actions.act_window">
+        <field name="name">Property Type</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new property type.
+            </p>
+        </field>
+    </record>
+</odoo>

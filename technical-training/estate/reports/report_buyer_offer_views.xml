@@ -1,0 +1,29 @@
+<!-- estate_property_report_view.xml -->
+<odoo>
+    <record id="view_report_buyer_offer_tree" model="ir.ui.view">
+        <field name="name">report.buyer.offer.tree</field>
+        <field name="model">report.buyer.offer</field>
+        <field name="arch" type="xml">
+            <tree string="Report Buyer Offers">
+                <field name="buyer_id" />
+                <field name="email" />
+                <field name="property_accepted" />
+                <field name="property_sold" />
+                <field name="property_cancel" />
+                <field name="offer_accepted" />
+                <field name="offer_rejected" />
+                <field name="max_price_offer" />
+                <field name="min_price_offer" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_reporting_buyer_offers" model="ir.actions.act_window">
+        <field name="name">Reporting Buyer Offers</field>
+        <field name="res_model">report.buyer.offer</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_report_buyer_offer_tree" />
+    </record>
+
+
+</odoo>

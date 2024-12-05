@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_estate_property_user,estate.property,model_estate_property,base.group_user,1,0,0,0
+access_estate_property_manager,estate.property,model_estate_property,estate.estate_admin,1,1,1,1
+access_estate_property_type_manager,estate.property.type,model_estate_property_type,estate.estate_admin,1,1,1,1
+access_estate_property_offer_manager,estate.property.offer,model_estate_property_offer,estate.estate_admin,1,1,1,1
+access_estate_property_tag_manager,estate.property.tag,model_estate_property_tag,estate.estate_admin,1,1,1,1
+access_report_buyer_offer,access.report.buyer.offer,model_report_buyer_offer,,1,1,1,1
+access_buyer_offer_export_xlsx_wizard,access.buyer.offer.export.xlsx.wizard,model_buyer_offer_export_xlsx_wizard,,1,1,1,1
